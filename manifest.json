@@ -1,0 +1,16 @@
+{
+  "name": "Panasonic Selector Tools",
+  "short_name": "Selectors",
+  "description": "Quick launch page for Panasonic component selection tools",
+  "start_url": "./landing v2.html",
+  "display": "standalone",
+  "background_color": "#0b1020",
+  "theme_color": "#004098",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23004098'/%3E%3Ctext x='8' y='24' font-family='system-ui,sans-serif' font-size='22' font-weight='800' fill='white'%3EP%3C/text%3E%3C/svg%3E",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

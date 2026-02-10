@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Panasonic Selector Tools</title>
+  <meta name="description"
+    content="Quick launch page for Panasonic component selection tools: Capacitor, Power Inductor, Film Capacitor, Chip Resistor." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23004098'/%3E%3Ctext x='8' y='24' font-family='system-ui,sans-serif' font-size='22' font-weight='800' fill='white'%3EP%3C/text%3E%3C/svg%3E" />
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#004098" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Particle canvas background -->
+  <canvas id="particles" aria-hidden="true"></canvas>
+
+  <div class="wrap">
+    <header>
+      <a class="brand" href="#" aria-label="Panasonic selector tools landing page">
+        <div class="logoBox" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
+            <text x="7" y="25" font-family="ui-sans-serif, system-ui, sans-serif" font-size="26" font-weight="800"
+              fill="white">P</text>
+          </svg>
+        </div>
+        <div class="wordmark">
+          <svg viewBox="0 0 520 72" role="img" aria-label="Panasonic">
+            <title>Panasonic</title>
+            <text x="0" y="52"
+              font-family="ui-sans-serif, system-ui, -apple-system, 'SF Pro Display', 'SF Pro Text', Segoe UI, Roboto, Helvetica, Arial"
+              font-size="54" font-weight="800" letter-spacing="-1.5" fill="currentColor">Panasonic</text>
+          </svg>
+          <div class="subline">Component Selection Tools</div>
+        </div>
+      </a>
+
+      <div class="header-right">
+        <div class="pill" title="Tip">
+          <span aria-hidden="true">⌘</span>
+          <span>Press 1–4 to open a tool</span>
+        </div>
+
+        <!-- Theme toggle with animated sun/moon -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light theme" title="Toggle theme">
+          <!-- Sun icon -->
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+          </svg>
+          <!-- Moon icon -->
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <section class="hero" aria-label="Hero">
+      <h1>Component selection, streamlined.</h1>
+      <p class="sub">
+        Find the right passive components in seconds. Filter by specs, compare series, and jump straight to product data
+        — all in one place.
+      </p>
+
+      <div class="search-wrap">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" />
+          <path d="M16 16l4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+        <input class="search-input" type="text" id="toolSearch"
+          placeholder="Search tools… e.g. capacitor, inductor, resistor" autocomplete="off" />
+      </div>
+
+      <div class="grid" role="list" aria-label="Tools">
+        <!-- ─── Capacitor ─── -->
+        <a class="card" role="listitem" href="https://cap-selector.vercel.app" target="_blank" rel="noopener noreferrer"
+          aria-label="Open Capacitor selector" data-tilt="on"
+          data-keywords="capacitor electrolytic polymer hybrid aluminium al esr ripple">
+          <span class="accent a" aria-hidden="true"></span>
+          <span class="kbd-hint" aria-hidden="true">1</span>
+          <div class="card-glow"></div>
+          <div class="top">
+            <div>
+              <h2 class="title">Capacitor</h2>
+              <p class="desc">Browse polymer, hybrid & aluminium electrolytic capacitors. Filter by capacitance,
+                voltage, ESR and ripple current.</p>
+            </div>
+            <div class="arrow" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M7 17L17 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                <path d="M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+          </div>
+          <div class="meta" aria-label="Tags">
+            <span class="tag">Al Electrolytic</span>
+            <span class="tag">Hybrid</span>
+            <span class="tag">Polymer</span>
+          </div>
+        </a>
+
+        <!-- ─── Power Inductor ─── -->
+        <a class="card" role="listitem" href="https://pcc-selector.vercel.app" target="_blank" rel="noopener noreferrer"
+          aria-label="Open Power Inductor selector" data-tilt="on"
+          data-keywords="power inductor pcc coil multi source vibration current">
+          <span class="accent b" aria-hidden="true"></span>
+          <span class="kbd-hint" aria-hidden="true">2</span>
+          <div class="card-glow"></div>
+          <div class="top">
+            <div>
+              <h2 class="title">Power Inductor</h2>
+              <p class="desc">Compare inductance, DCR, and saturation current across Panasonic power inductor series for
+                automotive & industrial use.</p>
+            </div>
+            <div class="arrow" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M7 17L17 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                <path d="M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+          </div>
+          <div class="meta" aria-label="Tags">
+            <span class="tag">Multi Source</span>
+            <span class="tag">High Vibration</span>
+            <span class="tag">High Current</span>
+          </div>
+        </a>
+
+        <!-- ─── DC-Link Film Capacitor ─── -->
+        <a class="card" role="listitem" href="https://film-cap-selector.vercel.app" target="_blank"
+          rel="noopener noreferrer" aria-label="Open Film capacitor selector" data-tilt="on"
+          data-keywords="film capacitor dc-link dc link snubber fuse function high voltage long life">
+          <span class="accent c" aria-hidden="true"></span>
+          <span class="kbd-hint" aria-hidden="true">3</span>
+          <div class="card-glow"></div>
+          <div class="top">
+            <div>
+              <h2 class="title">DC-Link Film Capacitor</h2>
+              <p class="desc">Find film capacitors for snubber, DC-link and general purpose circuits. Filter by voltage,
+                capacitance and temperature class.</p>
+            </div>
+            <div class="arrow" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M7 17L17 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                <path d="M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+          </div>
+          <div class="meta" aria-label="Tags">
+            <span class="tag">Fuse Function</span>
+            <span class="tag">High voltage</span>
+            <span class="tag">Long life</span>
+          </div>
+        </a>
+
+        <!-- ─── Chip Resistor ─── -->
+        <a class="card" role="listitem" href="https://resistor-selector2.vercel.app" target="_blank"
+          rel="noopener noreferrer" aria-label="Open Chip Resistor selector" data-tilt="on"
+          data-keywords="chip resistor smd precision high reliability proven quality tolerance">
+          <span class="accent d" aria-hidden="true"></span>
+          <span class="kbd-hint" aria-hidden="true">4</span>
+          <div class="card-glow"></div>
+          <div class="top">
+            <div>
+              <h2 class="title">Chip Resistor</h2>
+              <p class="desc">Select from precision, high-reliability and current-sensing chip resistors. Filter by
+                resistance, tolerance and package size.</p>
+            </div>
+            <div class="arrow" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M7 17L17 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                <path d="M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+          </div>
+          <div class="meta" aria-label="Tags">
+            <span class="tag">High Reliability</span>
+            <span class="tag">Precision</span>
+            <span class="tag">Proven Quality</span>
+          </div>
+        </a>
+
+        <div class="no-results" id="noResults" role="status" aria-live="polite">
+          No tools match your search.
+        </div>
+      </div>
+
+      <div class="disclaimer" role="note" aria-label="Disclaimer">
+        <span class="badge">Notice</span>
+        <span><b>Not an official Panasonic site.</b> This page is an internal quick-launch hub; Panasonic is a
+          registered trademark of Panasonic Holdings Corporation.</span>
+      </div>
+
+      <footer>
+        <span>All links open in a new tab.</span>
+        <span aria-hidden="true">·</span>
+        <span>Questions? <a href="mailto:cross@eu.panasonic.com">cross@eu.panasonic.com</a></span>
+        <span aria-hidden="true">·</span>
+        <span>v2.1 · Feb 2026</span>
+      </footer>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
