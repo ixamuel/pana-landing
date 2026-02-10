@@ -10,16 +10,33 @@
     return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
   }
 
-  function applyTheme(theme) {
-    // theme can be 'light', 'dark', or 'auto'
+  function applyTheme(theme, isInitial = false) {
     const resolved = theme === 'auto' ? getSystemTheme() : theme;
-    html.setAttribute('data-theme', theme);
-    html.setAttribute('data-active-theme', resolved);
-    document.querySelector('meta[name="color-scheme"]').content = resolved;
+
+    // Use View Transitions API if supported and not the initial call
+    if (document.startViewTransition && !isInitial) {
+      // Add attribute to signal we're transitioning
+      html.setAttribute('data-theme-transitioning', 'true');
+
+      const transition = document.startViewTransition(() => {
+        html.setAttribute('data-theme', theme);
+        html.setAttribute('data-active-theme', resolved);
+        document.querySelector('meta[name="color-scheme"]').content = resolved;
+      });
+
+      transition.finished.finally(() => {
+        html.removeAttribute('data-theme-transitioning');
+      });
+    } else {
+      // Fallback or initial call
+      html.setAttribute('data-theme', theme);
+      html.setAttribute('data-active-theme', resolved);
+      document.querySelector('meta[name="color-scheme"]').content = resolved;
+    }
   }
 
   // Init
-  applyTheme(stored || 'auto');
+  applyTheme(stored || 'auto', true);
 
   btn.addEventListener('click', () => {
     const current = html.getAttribute('data-active-theme');

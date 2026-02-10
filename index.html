@@ -51,25 +51,24 @@
           <span>Press 1–4 to open a tool</span>
         </div>
 
-        <!-- Theme toggle with animated sun/moon -->
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light theme" title="Toggle theme">
-          <!-- Sun icon -->
-          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          <svg class="sun-moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5" />
-            <line x1="12" y1="1" x2="12" y2="3" />
-            <line x1="12" y1="21" x2="12" y2="23" />
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-            <line x1="1" y1="12" x2="3" y2="12" />
-            <line x1="21" y1="12" x2="23" y2="12" />
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-          </svg>
-          <!-- Moon icon -->
-          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+            <mask id="moon-mask">
+              <rect x="0" y="0" width="100%" height="100%" fill="white" />
+              <circle class="mask-circle" cx="24" cy="10" r="10" fill="black" />
+            </mask>
+            <circle class="sun-body" cx="12" cy="12" r="5" mask="url(#moon-mask)" />
+            <g class="sun-rays">
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </g>
           </svg>
         </button>
       </div>
@@ -88,7 +87,7 @@
           <path d="M16 16l4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
         </svg>
         <input class="search-input" type="text" id="toolSearch"
-          placeholder="Search tools… e.g. capacitor, inductor, resistor" autocomplete="off" />
+          placeholder="Search tools… e.g. capacitors, inductors, resistors" autocomplete="off" />
       </div>
 
       <div class="grid" role="list" aria-label="Tools">
@@ -101,7 +100,7 @@
           <div class="card-glow"></div>
           <div class="top">
             <div>
-              <h2 class="title">Capacitor</h2>
+              <h2 class="title">Capacitors</h2>
               <p class="desc">Browse polymer, hybrid & aluminium electrolytic capacitors. Filter by capacitance,
                 voltage, ESR and ripple current.</p>
             </div>
@@ -129,7 +128,7 @@
           <div class="card-glow"></div>
           <div class="top">
             <div>
-              <h2 class="title">Power Inductor</h2>
+              <h2 class="title">Power Inductors</h2>
               <p class="desc">Compare inductance, DCR, and saturation current across Panasonic power inductor series for
                 automotive & industrial use.</p>
             </div>
@@ -157,7 +156,7 @@
           <div class="card-glow"></div>
           <div class="top">
             <div>
-              <h2 class="title">DC-Link Film Capacitor</h2>
+              <h2 class="title">DC-Link Film Capacitors</h2>
               <p class="desc">Find film capacitors for snubber, DC-link and general purpose circuits. Filter by voltage,
                 capacitance and temperature class.</p>
             </div>
@@ -185,7 +184,7 @@
           <div class="card-glow"></div>
           <div class="top">
             <div>
-              <h2 class="title">Chip Resistor</h2>
+              <h2 class="title">Chip Resistors</h2>
               <p class="desc">Select from precision, high-reliability and current-sensing chip resistors. Filter by
                 resistance, tolerance and package size.</p>
             </div>
