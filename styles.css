@@ -68,10 +68,11 @@ body {
     "Segoe UI", Roboto, Helvetica, Arial;
   color: var(--text);
   background:
-    radial-gradient(1200px 700px at 18% 10%, rgba(125, 211, 252, .30), transparent 60%),
-    radial-gradient(900px 600px at 70% 18%, rgba(167, 139, 250, .26), transparent 60%),
-    radial-gradient(1000px 700px at 60% 92%, rgba(52, 211, 153, .22), transparent 55%),
+    radial-gradient(80% 50% at 15% 10%, rgba(125, 211, 252, .25), transparent 70%),
+    radial-gradient(70% 45% at 85% 20%, rgba(167, 139, 250, .20), transparent 60%),
+    radial-gradient(90% 55% at 50% 90%, rgba(52, 211, 153, .18), transparent 65%),
     linear-gradient(180deg, var(--bg0), var(--bg1));
+  background-attachment: fixed;
   overflow-x: hidden;
   transition: background .4s ease, color .3s ease;
 }
@@ -818,6 +819,55 @@ header {
 
   .hero {
     padding: 18px;
+  }
+
+  .card {
+    min-height: 0;
+    padding: 12px 14px;
+    gap: 8px;
+  }
+
+  .card .desc {
+    display: none;
+  }
+
+  .meta {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    margin-top: 4px;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE/Edge */
+  }
+
+  .meta::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari/Webkit */
+  }
+
+  .tag {
+    flex: 0 0 auto;
+    padding: 5px 9px;
+    font-size: 11px;
+  }
+}
+
+/* Tighten gradients for mobile portrait */
+@media (max-width: 480px) and (orientation: portrait) {
+  body {
+    background:
+      radial-gradient(100% 40% at 50% 0%, rgba(125, 211, 252, .22), transparent 85%),
+      radial-gradient(100% 40% at 50% 100%, rgba(52, 211, 153, .15), transparent 85%),
+      linear-gradient(180deg, var(--bg0), var(--bg1));
+  }
+
+  body::before {
+    background:
+      radial-gradient(circle at 50% 20%, rgba(255, 255, 255, .08), transparent 50%),
+      radial-gradient(circle at 50% 80%, rgba(255, 255, 255, .06), transparent 50%);
+    opacity: .4;
   }
 }
 
