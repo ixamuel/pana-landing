@@ -17,6 +17,7 @@
   --accentB: #a78bfa;
   --accentC: #34d399;
   --accentD: #fbbf24;
+  --accentE: #f472b6;
   --panasonic-blue: #004098;
   --glow-opacity: .12;
   --particle-opacity: .25;
@@ -511,6 +512,10 @@ h1 {
   }
 }
 
+.card:nth-child(5) {
+  animation-delay: .24s, .67s;
+}
+
 .card.hidden {
   display: none;
 }
@@ -708,6 +713,10 @@ h1 {
 
 .d {
   background: linear-gradient(180deg, var(--accentD), rgba(251, 191, 36, .2));
+}
+
+.e {
+  background: linear-gradient(180deg, var(--accentE), rgba(244, 114, 182, .2));
 }
 
 /* ─── Footer ─── */

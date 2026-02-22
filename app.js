@@ -65,8 +65,8 @@
 
     const key = e.key;
 
-    // Digits 1-4 → open corresponding tool
-    if (key >= '1' && key <= '4') {
+    // Digits 1-5 → open corresponding tool
+    if (key >= '1' && key <= '5') {
       const idx = parseInt(key) - 1;
       if (cards[idx]) {
         e.preventDefault();
